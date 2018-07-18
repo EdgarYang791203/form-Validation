@@ -12,6 +12,15 @@ $(document).ready(function() {
         $submit[`${$valid.length===ary.length && ary.map(key=>status[key]).every(val=>val)?"remove":"add"}Class`]("warn");
     });
     $("form").submit(e => {
-        $submit.hasClass("warn") && (e.stopImmediatePropagation() || e.preventDefault());
+        if ($submit.hasClass("warn")) {
+            alert("請填完整資料...");
+        } else {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+            var nextPage = parseInt($submit[0].dataset.page) + 1;
+            console.log(nextPage);
+            window.location = `https://edgaryang791203.github.io/form-Validation/dist/step${nextPage}.html`;
+        }
+        //$submit.hasClass("warn") && (e.stopImmediatePropagation() || e.preventDefault());
     });
 });

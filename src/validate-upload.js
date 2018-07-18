@@ -84,24 +84,24 @@ $(document).ready(function() {
             // });
         });
 
-    $form.submit(function(e) {
-        var formData = new FormData;
-        addedFile.forEach(file => {
-            formData.append("Photo", file);
-        });
-        $.ajax({
-            type: "POST",
-            data: formData,
-            contentType: false,
-            processData: false
-        }).done(url => {
-            url ? location.href = url : alert("Error");
-        });
-        e.preventDefault();
-        if ($(":submit").hasClass("warn")) {
-            $msg.val('未驗證成功');
-        } else {
-            $(location).attr('href', 'http://127.0.0.1:3000/step4.html');
-        }
-    });
+    // $form.submit(function(e) {
+    //     var formData = new FormData;
+    //     addedFile.forEach(file => {
+    //         formData.append("Photo", file);
+    //     });
+    //     $.ajax({
+    //         type: "POST",
+    //         data: formData,
+    //         contentType: false,
+    //         processData: false
+    //     }).done(url => {
+    //         url ? location.href = url : alert("Error");
+    //     });
+    //     e.preventDefault();
+    //     if ($(":submit").hasClass("warn")) {
+    //         $msg.val('未驗證成功');
+    //     } else {
+    //         $(location).attr('href', 'http://127.0.0.1:3000/step4.html');
+    //     }
+    // });
 });
