@@ -6,7 +6,7 @@ $(document).ready(function() {
         if (timer.textContent > 0) {
             window.setTimeout(countdown, 1000);
         } else {
-            window.location = "https://www.google.com/";
+            window.location = "https://edgaryang791203.github.io/form-Validation/dist/";
             window.clearInterval(countdown);
         }
     }
